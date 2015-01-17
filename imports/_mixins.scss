@@ -1,0 +1,36 @@
+/* General Gloabls */
+@mixin clr{ clear: both; }
+@mixin fl{ float: left; }
+@mixin fr{ float: right; }
+@mixin hide{ display: none; }
+@mixin show{ display: block; }
+@mixin invisible { visibility: hidden; }
+@mixin alpha,
+@mixin middle,
+@mixin omega{ float: left; position: relative; display: inline; }
+
+@mixin nindent{
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  text-indent: -999px;
+  overflow: hidden;
+}
+
+@mixin nav{ list-style: none; margin: 0; padding: 0; }
+
+@mixin fill{ width: 100%; }
+
+@mixin clearfix{
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}

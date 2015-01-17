@@ -1,0 +1,94 @@
+$root-font-size: 16 !default;
+
+//  rem()
+//  Divides $input by $root-font-size and appends "rem" unit
+//  $input is processed via unitize() if it contains multiple values
+//
+//  PARAMS:
+//    $input        required
+//
+//  EXAMPLES:
+//    rem(18)       #=> 1.5rem
+
+@function rem($input) {
+  $output: null;
+
+  @if type-of($input) == list {
+    $output: unitize($input, rem);
+  } @else {
+    $output: ($input / $root-font-size) + rem;
+  }
+  
+  @return $output;
+}
+
+
+//  em()
+//  Divides $input by the given base $font-size param and appends "em" unit
+//  $input is processed via unitize() if it contains multiple values
+//
+//  PARAMS:
+//    $input        required
+//    $font-size    not required; defaults to value of $root-font-size
+//
+//  EXAMPLES:
+//    em(18, 12)    #=> 1.5em
+//    em(20)        #=> 1.66667em
+
+@function em($input, $font-size: $root-font-size) {
+  $output: null;
+
+  @if type-of($input) == list {
+    $output: unitize($input, em, $font-size);
+  } @else {
+    $output: ($input / $font-size) + em;
+  }
+  
+  @return $output;
+}
+
+
+//  unitize()
+//  Converts the unitless numerical values in a given SASS list to values in a given unit
+//  See the SASS_REFERENCE for a description and examples of the "list" data type: 
+//    http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#lists
+//  Accepts optional $font-size param (defaulting to $root-font-size) for "em" conversions
+//
+//  PARAMS:
+//    $list         required
+//    $unit         not required; defaults to pixels ("px")
+//    $font-size    not required; defaults to value of $root-font-size
+//
+//  NOTES:
+//    CSS font shorthand (e.g., "bold 12/18 Helvetica, Arial, sans-serif") is not yet supported;
+//      see "Division and /": http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#division-and-slash
+//
+//  EXAMPLES:
+//    See CSS rulesets below the function
+
+@function unitize($list, $unit: px, $font-size: $root-font-size) {
+  $output: null;                          // declare $output; to return new concatenated list
+  
+  @each $value in $list {                 // iterate through $list 
+    
+    @if type-of($value) == number {       // skip strings
+    
+      @if unitless($value) {              // respect values already assigned units
+        
+        @if $unit == rem {                // rem conversions
+          $value: rem($value);
+        } @else if $unit == em {          // em conversions
+          $value: em($value, $font-size);
+        } @else {                         // everything else avoids conversion
+          $value: $value + $unit;
+        }
+        
+      }
+  
+    }
+    
+    $output: append($output, $value);     // concatenate values
+  }
+
+  @return $output;
+}

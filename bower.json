@@ -1,0 +1,27 @@
+{
+  "name": "koi",
+  "version": "1.0.0",
+  "homepage": "https://github.com/eboyer/koi",
+  "authors": [
+    "Eric Boyer <eboyer@gmail.com>"
+  ],
+  "description": "SCSS toolset to use as a base for starting projects.",
+  "keywords": [
+    "CSS",
+    "CSS3",
+    "SASS",
+    "SCSS",
+    "HTML",
+    "HTML5"
+  ],
+  "main": [
+    "koi.scss"
+  ],
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}
