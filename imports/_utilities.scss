@@ -5,9 +5,6 @@
 @mixin hide{ display: none; }
 @mixin show{ display: block; }
 @mixin invisible { visibility: hidden; }
-@mixin alpha,
-@mixin middle,
-@mixin omega{ float: left; position: relative; display: inline; }
 
 @mixin nindent{
   font: 0/0 a;
