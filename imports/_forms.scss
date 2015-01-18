@@ -1,0 +1,318 @@
+$formPaddingSides: 15px;
+$formPaddingTopBottom: 10px;
+$formErrorPrimary: #df233c;
+$formErrorSecondary: #fff5c3;
+
+/* Parent Errors */
+.flash-error{
+  padding: 10px;
+  margin: 0 auto 20px auto;
+  color: #fff;
+  background: $formErrorPrimary;
+  font-size: rem(12);
+  line-height: rem(18);
+  text-align: center;
+}
+
+/* Labels */
+label{
+  text-transform: uppercase;
+  font-size: rem(14);
+  line-height: rem(14);
+  letter-spacing: 0.02em;
+  margin: 0 0 8px 0;
+  padding: 0 $formPaddingSides 0 $formPaddingSides;
+  display: block;
+  cursor: pointer;
+  color: #274367;
+}
+
+/* Basic styling on all basic form elements */
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+  -webkit-appearance: none;
+  background-color: #efefef;
+  font-family: inherit;
+  border: 0;
+  color: #666;
+  color: rgba(0, 0, 0, 0.75);
+  display: block;
+  font-size: rem(12);
+  margin: 0;
+  padding: $formPaddingTopBottom $formPaddingSides;
+  /*height: 2.3125rem;*/
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+  @include border-top-radius(2px);
+  @include border-bottom-radius(2px);
+  @include border-left-radius(2px);
+  @include border-right-radius(2px);
+    &.visted{
+      outline: 1px solid #6eeed7;
+    }
+    &.invalid{
+      outline: 1px solid #ff7332;
+    }
+    &.placeholder{
+      color: #666;
+    }
+  }
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="date"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="month"]:focus,
+  input[type="week"]:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="time"]:focus,
+  input[type="url"]:focus,
+  textarea:focus {
+    background: #efefef;
+    box-shadow: inset 0 0 0 1px #fff, inset 0 1px 2px rgba(10, 13, 25, 0.15), 0 0 8px rgba(255, 255, 255, 0.5), 0 1px 0 rgba(255, 255, 255, 0.1);
+    -webkit-transition: none;
+    transition: none;
+    outline: 1px solid transparent;
+    border: 0; }
+  input[type="text"][disabled], fieldset[disabled] input[type="text"],
+  input[type="password"][disabled], fieldset[disabled]
+  input[type="password"],
+  input[type="date"][disabled], fieldset[disabled]
+  input[type="date"],
+  input[type="datetime"][disabled], fieldset[disabled]
+  input[type="datetime"],
+  input[type="datetime-local"][disabled], fieldset[disabled]
+  input[type="datetime-local"],
+  input[type="month"][disabled], fieldset[disabled]
+  input[type="month"],
+  input[type="week"][disabled], fieldset[disabled]
+  input[type="week"],
+  input[type="email"][disabled], fieldset[disabled]
+  input[type="email"],
+  input[type="number"][disabled], fieldset[disabled]
+  input[type="number"],
+  input[type="search"][disabled], fieldset[disabled]
+  input[type="search"],
+  input[type="tel"][disabled], fieldset[disabled]
+  input[type="tel"],
+  input[type="time"][disabled], fieldset[disabled]
+  input[type="time"],
+  input[type="url"][disabled], fieldset[disabled]
+  input[type="url"],
+  textarea[disabled], fieldset[disabled]
+  textarea {
+    background-color: #dddddd; }
+  input[type="text"].radius,
+  input[type="password"].radius,
+  input[type="date"].radius,
+  input[type="datetime"].radius,
+  input[type="datetime-local"].radius,
+  input[type="month"].radius,
+  input[type="week"].radius,
+  input[type="email"].radius,
+  input[type="number"].radius,
+  input[type="search"].radius,
+  input[type="tel"].radius,
+  input[type="time"].radius,
+  input[type="url"].radius,
+  textarea.radius {}
+
+input[type="submit"] {
+  -webkit-appearance: none; }
+
+/* Respect enforced amount of rows for textarea */
+textarea[rows] {
+  height: auto; }
+
+/* Add height value for select elements to match text input height */
+select {
+  -webkit-appearance: none !important;
+  background-color: #fafafa;
+  background-image: url("data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==");
+  background-repeat: no-repeat;
+  background-position: 97% center;
+  border: 1px solid #cccccc;
+  padding: $formPaddingSides;
+  font-size: rem(14);
+  height: 2.3125rem; }
+  select.radius {}
+  select:hover {
+    background-color: #f3f3f3;
+    border-color: #999999; }
+
+/* Adjust margin for form elements below */
+input[type="file"],
+input[type="checkbox"],
+input[type="radio"],
+select {
+  margin: 0 0 16px 0; }
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  display: inline-block;
+  margin: 0 16px 0 8px;
+  vertical-align: baseline; }
+
+/* Normalize file input width */
+input[type="file"] {
+  width: 100%; }
+
+/* Form layouts */
+.form-wrapper{
+  margin: 0; padding: 0; border: 0;
+  h1{
+    font-size: rem(18);
+    letter-spacing: 0.04em;
+  }
+}
+.form-block{
+  margin: 0; padding: 0;
+  list-style: none;
+  @include koi-g;
+
+  li{
+    padding: 15px 0 0 0;
+    width: 100%;
+    @include koi-u;
+
+    .form-block{ margin: 0; padding: 0; border: 0; li{ padding: 0; } }
+    .error-message{ display: none; }
+    &:first-child{ padding-top: 0; }
+  }
+
+  li.full{ @include koi-u-1; }
+  li.halves{
+    @include koi-u-1-2;
+  }
+  li.thirds{
+    @include koi-u-1-3;
+  }
+  li.fourths{
+    @include koi-u-1-4;
+  }
+
+  li.halves.first{ border-right: 1px solid #dedede; }
+  li.halves.second{}
+
+  li.thirds.first,
+  li.thirds.second{ border-right: 1px solid #dedede; }
+  li.thirds.second,
+  li.thirds.third{}
+
+  li.fourths.first,
+  li.fourths.second,
+  li.fourths.third{ border-right: 1px solid #dedede; }
+  li.fourths.second,
+  li.fourths.third,
+  li.fourths.fourth{}
+
+  // Specific form row styles
+  li.checkbox{
+    label{
+      padding: 0;
+      font-weight: normal;
+      font-size: rem(12);
+      line-height: rem(12);
+      text-transform: none;
+      color: #fff;
+      display: block;
+      position: relative;
+      padding: 0 0 0 18px;
+      margin: 0;
+      input[type="checkbox"]{
+        position: absolute;
+        top: 0; left: 0;
+        margin: 0;
+      }
+    }
+  }
+  li.desc{
+    padding-left: $formPaddingSides;
+    padding-right: $formPaddingSides;
+    p { font-size: rem(13); margin: 0; }
+  }
+  li.actions{
+    .btn{ float: left; }
+  }
+
+  // Error states
+  li.error{
+    background: $formErrorSecondary;
+
+    label{ color: $formErrorPrimary; margin: 0 0 5px 0; }
+    & > input[type="text"],
+    & > input[type="password"],
+    & > input[type="date"],
+    & > input[type="datetime"],
+    & > input[type="datetime-local"],
+    & > input[type="month"],
+    & > input[type="week"],
+    & > input[type="email"],
+    & > input[type="number"],
+    & > input[type="search"],
+    & > input[type="tel"],
+    & > input[type="time"],
+    & > input[type="url"],
+    & > textarea{
+      border: 1px solid $formErrorPrimary; }
+    &.full{
+      & > input[type="text"],
+      & > input[type="password"],
+      & > input[type="date"],
+      & > input[type="datetime"],
+      & > input[type="datetime-local"],
+      & > input[type="month"],
+      & > input[type="week"],
+      & > input[type="email"],
+      & > input[type="number"],
+      & > input[type="search"],
+      & > input[type="tel"],
+      & > input[type="time"],
+      & > input[type="url"],
+      & > textarea{
+        border-top: 1px solid $formErrorPrimary;
+        border-left: 1px solid $formErrorPrimary;
+        border-bottom: 1px solid $formErrorPrimary;
+        border-right: 10px solid $formErrorPrimary; }
+    }
+    .error-message{
+      font-size: rem(11);
+      padding: 0 $formPaddingSides 0 $formPaddingSides;
+      margin: 0 0 5px 0;
+      display: block;
+      color: $formErrorPrimary; }
+    ul{
+      li{ padding: 0; }
+    }
+  }
+  li.halves,
+  li.thirds,
+  li.fourths{ &.error{ border-right: 10px solid $formErrorPrimary; } }
+
+  // Second level ULs
+  ul{
+    margin: 0; padding: 0;
+    list-style: none;
+    @include koi-g();
+    li{
+    margin: 0; padding: 0; }
+  }
+}

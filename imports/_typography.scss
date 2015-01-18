@@ -1,0 +1,201 @@
+$typeSpacing: 10px;
+
+/* Typography resets */
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0; }
+
+/* Default Link Styles */
+a {
+  color: #0079FF;
+  text-decoration: none;
+  line-height: inherit; }
+  a:hover, a:focus {
+    color: #0079FF; }
+  a img {
+    border: none; }
+
+/* Default paragraph styles */
+p {
+  font-family: inherit;
+  font-weight: normal;
+  font-size: rem(16);
+  line-height: rem(26);
+  margin-bottom: $typeSpacing;
+  text-rendering: optimizeLegibility; }
+  p.lead {
+    font-size: rem(20);
+    line-height: rem(26); }
+  p aside {
+    font-size: rem(14);
+    line-height: rem(22);
+    font-style: italic; }
+
+/* Default header styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #565656;
+  text-rendering: optimizeLegibility;
+  margin-bottom: $typeSpacing;
+  line-height: rem(22); }
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    font-size: 60%;
+    color: #565656;
+    line-height: 0; }
+
+h1 {
+  font-size: rem(24); }
+
+h2 {
+  font-size: rem(22); }
+
+h3 {
+  font-size: rem(20); }
+
+h4 {
+  font-size: rem(18); }
+
+h5 {
+  font-size: rem(16); }
+
+h6 {
+  font-size: rem(18); }
+
+.subheader {
+  line-height: rem(22);
+  color: #565656;
+  font-weight: normal;
+  margin-bottom: $typeSpacing; }
+
+hr {
+  border: solid #dddddd;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: rem(18) 0 rem(20);
+  height: 0; }
+
+/* Helpful Typography Defaults */
+em,
+i {
+  font-style: italic;
+  line-height: inherit; }
+
+strong,
+b {
+  font-weight: bold;
+  line-height: inherit; }
+
+small {
+  font-size: 60%;
+  line-height: inherit; }
+
+code {
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-weight: bold;
+  color: #565656; }
+
+/* Lists */
+ul,
+ol,
+dl {
+  font-size: rem(16);
+  line-height: rem(26);
+  margin-bottom: 1.25rem;
+  list-style-position: outside;
+  font-family: inherit; }
+
+ul {
+  margin-left: 1.1rem; }
+  ul.no-bullet {
+    margin-left: 0; }
+    ul.no-bullet li ul,
+    ul.no-bullet li ol {
+      margin-left: 1.25rem;
+      margin-bottom: 0;
+      list-style: none; }
+
+/* Unordered Lists */
+ul li ul,
+ul li ol {
+  margin-left: 1.25rem;
+  margin-bottom: 0; }
+ul.square li ul, ul.circle li ul, ul.disc li ul {
+  list-style: inherit; }
+ul.square {
+  list-style-type: square;
+  margin-left: 1.1rem; }
+ul.circle {
+  list-style-type: circle;
+  margin-left: 1.1rem; }
+ul.disc {
+  list-style-type: disc;
+  margin-left: 1.1rem; }
+ul.no-bullet {
+  list-style: none; }
+
+/* Ordered Lists */
+ol {
+  margin-left: 1.4rem; }
+  ol li ul,
+  ol li ol {
+    margin-left: 1.25rem;
+    margin-bottom: 0; }
+
+/* Definition Lists */
+dl dt {
+  margin-bottom: 0.3rem;
+  font-weight: bold; }
+dl dd {
+  margin-bottom: 0.75rem; }
+
+/* Abbreviations */
+abbr,
+acronym {
+  text-transform: uppercase;
+  font-size: 90%;
+  color: #222222;
+  border-bottom: 1px dotted #dddddd;
+  cursor: help; }
+
+abbr {
+  text-transform: none; }
+
+/* Blockquotes */
+blockquote {
+  margin: 0 0 1.25rem;
+  padding: 0.5625rem 1.25rem 0 1.1875rem;
+  border-left: 1px solid #dddddd; }
+  blockquote cite {
+    display: block;
+    font-size: 0.8125rem;
+    color: #555555; }
+    blockquote cite:before {
+      content: "\2014 \0020"; }
+    blockquote cite a,
+    blockquote cite a:visited {
+      color: #555555; }
+
+blockquote,
+blockquote p {
+  line-height: rem(26);
+  color: #6f6f6f; }
